@@ -1,0 +1,3 @@
+{
+  "extends": "@qurl/typescript-config/base.json"
+}
