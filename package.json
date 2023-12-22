@@ -3,13 +3,13 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
-    "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
     "@qurl/eslint-config": "*",
     "@qurl/typescript-config": "*",
+    "pm2": "^5.3.0",
     "prettier": "^3.1.0",
     "turbo": "latest"
   },

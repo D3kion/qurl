@@ -1,20 +1,13 @@
-# Turborepo starter
+# qURL
 
 This is an official starter Turborepo.
-
-## Using this example
-
-Run the following command:
-
-```sh
-npx create-turbo@latest
-```
 
 ## What's inside?
 
 This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
+
 - `web`: a [Next.js](https://nextjs.org/) app
 - `@qurl/ui`: a stub React component library shared by both `web` and `docs` applications
 - `@qurl/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
@@ -34,7 +27,7 @@ This Turborepo has some additional tools already setup for you:
 
 To build all apps and packages, run the following command:
 
-```
+```sh
 cd qurl
 npm build
 ```
@@ -43,9 +36,10 @@ npm build
 
 To develop all apps and packages, run the following command:
 
-```
+```sh
 cd qurl
-npm dev
+# docker-compose up -d
+pm2 start
 ```
 
 ## Useful Links
