@@ -1,0 +1,25 @@
+## Fixes
+
+- add link to auth to guest shortener
+- return theme changer
+- adjust fonts and padding in shortener for mobile
+- fix and/or hide metrics
+
+## Promo
+
+- features block
+- user pains block
+- pricing (try)
+- roadmap (try)
+- reviews (skip)
+- faq (try)
+
+## API
+
+- Auth
+  - Take already created links from cookie and bind to user
+- Links
+  - Get
+  - Create (Guest)
+  - Create (Authed)
+- Gateway
