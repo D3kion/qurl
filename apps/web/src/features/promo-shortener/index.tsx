@@ -15,7 +15,7 @@ type CardProps = React.ComponentProps<typeof Card>;
 
 export function Shortener({ className, ...props }: CardProps) {
   return (
-    <Card className={cn("min-w-[300px]", className)} {...props}>
+    <Card className={cn("", className)} {...props}>
       <CardHeader>
         <CardTitle>Попробуйте прямо сейчас</CardTitle>
         <CardDescription>
