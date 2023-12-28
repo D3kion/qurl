@@ -23,13 +23,13 @@ export function Shortener({ className, ...props }: CardProps) {
         </CardDescription>
       </CardHeader>
       <CardContent className="grid gap-4">
-        <form className="flex flex-col items-center gap-2">
+        <form className="flex flex-col sm:flex-row items-center gap-2">
           <Input
             type="url"
             defaultValue="https://"
             placeholder="Ссылка для сокращения"
           />
-          <Button className="w-full" type="submit">
+          <Button className="w-full sm:w-fit" type="submit">
             Сократить
           </Button>
         </form>

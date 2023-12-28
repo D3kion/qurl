@@ -1,13 +1,10 @@
-import dynamic from "next/dynamic";
-
 import { Card, CardHeader, CardTitle } from "@/shared/ui/card";
 import { Shortener } from "@/features/promo-shortener";
-
-const HeroBG = dynamic(() => import("./hero-bg"), { ssr: false });
+import { HeroBG } from "./hero-bg";
 
 export function Hero() {
   return (
-    <div className="relative -mt-14 pt-32">
+    <div className="relative -mt-14 pt-32 overflow-hidden">
       <HeroBG />
       <section className="container mx-auto flex flex-col gap-16 lg:grid lg:grid-cols-2 lg:grid-rows-1 min-h-[400px]">
         <div className="lg:pt-16 flex flex-col items-center text-center lg:items-start lg:text-start">
@@ -57,7 +54,7 @@ export function Hero() {
           )}
         </div>
       </section>
-      <section className="mt-12 col-span-2 h-[180px] bg-background/25 border-y backdrop-blur">
+      <section className=" mt-12 col-span-2 h-[180px] bg-background/25 border-y backdrop-blur">
         <ul className="h-full container mx-auto flex justify-evenly items-center">
           <div className="bg-muted/80 h-3/5 w-px" />
           <li>
