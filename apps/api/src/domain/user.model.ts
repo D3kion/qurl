@@ -1,8 +1,8 @@
-import { User as UserModel } from '@prisma/client';
+import { User as UserModel } from '@qurl/datacloud';
 import { Link } from './link.model';
 
 export class User implements UserModel {
-  id: number;
+  id: string;
   email: string;
   name: string;
   emailVerified: Date;
