@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { cn } from "@/shared/lib/utils";
 import { Button } from "@/shared/ui/button";
 import {
@@ -19,7 +21,11 @@ export function Shortener({ className, ...props }: CardProps) {
       <CardHeader>
         <CardTitle>Попробуйте прямо сейчас</CardTitle>
         <CardDescription>
-          Для доступа ко всем возможностям, необходимо авторизоваться.
+          Для доступа ко всем возможностям, необходимо{" "}
+          <Link href={"/auth"} className="underline underline-offset-2">
+            авторизоваться
+          </Link>
+          .
         </CardDescription>
       </CardHeader>
       <CardContent className="grid gap-4">

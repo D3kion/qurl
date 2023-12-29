@@ -1,6 +1,7 @@
 import Link from "next/link";
 
-import { Button } from "@/shared/ui/button";
+import { cn } from "@/shared/lib/utils";
+import { Button, buttonVariants } from "@/shared/ui/button";
 import { ThemeToggle } from "@/features/theme-toggle";
 import { UserNavigation } from "@/features/user-navigation";
 
@@ -23,34 +24,70 @@ export function PromoLayout({ children }: React.PropsWithChildren) {
           </svg>
           qURL
         </Link>
-        <nav className="hidden lg:flex items-center space-x-4 lg:space-x-6 mx-6">
-          <Link
-            href="/"
-            className="text-sm font-medium transition-colors hover:text-primary"
-          >
-            Главная
-          </Link>
-          <Link
-            href="/"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-          >
-            Фичи
-          </Link>
-          <Link
-            href="#"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-          >
-            Документация
-          </Link>
-          <Link
-            href="#"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-          >
-            Рыба
-          </Link>
+        <nav className="hidden flex-1 lg:flex items-center justify-between mx-6">
+          <div>
+            <Link
+              href="/"
+              className={cn(
+                buttonVariants({ variant: "link" }),
+                "no-underline hover:text-primary hover:no-underline",
+                "text-foreground"
+              )}
+            >
+              Главная
+            </Link>
+            <Link
+              href="/"
+              className={cn(
+                buttonVariants({ variant: "link" }),
+                "no-underline text-muted-foreground hover:text-primary hover:no-underline"
+              )}
+            >
+              Возможности
+            </Link>
+            <Link
+              href="/"
+              className={cn(
+                buttonVariants({ variant: "link" }),
+                "no-underline text-muted-foreground hover:text-primary hover:no-underline"
+              )}
+            >
+              Тарифы
+            </Link>
+            <Link
+              href="/"
+              className={cn(
+                buttonVariants({ variant: "link" }),
+                "no-underline text-muted-foreground hover:text-primary hover:no-underline"
+              )}
+            >
+              Обратная связь
+            </Link>
+          </div>
+          <div>
+            <Link
+              href="#"
+              className={cn(
+                buttonVariants({ variant: "link" }),
+                "no-underline text-muted-foreground hover:text-primary hover:no-underline"
+              )}
+            >
+              Блог
+            </Link>
+            <Link
+              href="#"
+              className={cn(
+                buttonVariants({ variant: "link" }),
+                "no-underline text-muted-foreground hover:text-primary hover:no-underline"
+              )}
+              // className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+            >
+              Документация
+            </Link>
+          </div>
         </nav>
         <div className="ml-auto flex items-center space-x-4">
-          {/* <ThemeToggle /> */}
+          <ThemeToggle />
           {true ? (
             <Button asChild>
               <Link href="/auth">Ранний доступ</Link>

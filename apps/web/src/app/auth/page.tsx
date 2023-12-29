@@ -5,11 +5,9 @@ export default function RegisterPage() {
   return (
     <div className="mx-auto flex w-full flex-col justify-center space-y-6 max-w-[350px]">
       <div className="flex flex-col space-y-2 text-center">
-        <h1 className="text-2xl font-semibold tracking-tight">
-          Создайте учетную запись
-        </h1>
+        <h1 className="text-2xl font-semibold tracking-tight">Вход</h1>
         <p className="text-sm text-muted-foreground">
-          Введите ваш email ниже, чтобы начать пользоваться сервисом
+          Введите ваш email, чтобы продолжить
         </p>
       </div>
       <AuthForm />
