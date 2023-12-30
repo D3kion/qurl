@@ -25,6 +25,8 @@ model User {
   // projects ProjectUsers[]
   links Link[]
   // tokens   Token[]
+
+  // @@index(email)
 }
 
 model Link {

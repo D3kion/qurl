@@ -1,0 +1,28 @@
+@baseUrl=http://localhost:4200
+@jwtToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjbHFzM3p6ajMwMDAweWVzMmVlemlhcnBuIiwiZW1haWwiOiJ0ZXN0QHF1cmwuZGV2IiwiaWF0IjoxNzAzOTQ2OTA5LCJleHAiOjE3MDM5NTA1MDl9.pLud1884ES8hC298kmJwaTLS9aI8_0G6CgfXf_RGwVs
+
+### (Public) Short
+POST {{baseUrl}}/link/short HTTP/1.1
+
+### Create
+POST {{baseUrl}}/link HTTP/1.1
+Authorization: Bearer {{jwtToken}}
+
+
+### Get all
+GET {{baseUrl}}/link HTTP/1.1
+Authorization: Bearer {{jwtToken}}
+
+### Get one
+GET {{baseUrl}}/link/test HTTP/1.1
+Authorization: Bearer {{jwtToken}}
+
+### Update
+PATCH  {{baseUrl}}/link HTTP/1.1
+Authorization: Bearer {{jwtToken}}
+
+### Remove
+DELETE  {{baseUrl}}/link HTTP/1.1
+Authorization: Bearer {{jwtToken}}
+
+### Transfer

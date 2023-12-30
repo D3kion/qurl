@@ -1,0 +1,6 @@
+@baseUrl=http://localhost:4200
+@jwtToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjbHFzM3p6ajMwMDAweWVzMmVlemlhcnBuIiwiZW1haWwiOiJ0ZXN0QHF1cmwuZGV2IiwiaWF0IjoxNzAzOTQ2OTA5LCJleHAiOjE3MDM5NTA1MDl9.pLud1884ES8hC298kmJwaTLS9aI8_0G6CgfXf_RGwVs
+
+### Me
+GET {{baseUrl}}/user HTTP/1.1
+Authorization: Bearer {{jwtToken}}

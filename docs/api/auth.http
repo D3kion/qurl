@@ -1,9 +1,7 @@
-@baseUrl=http://127.0.0.1:4200
+@baseUrl=http://localhost:4200
 @magicToken=
 
 ### (Magic) Login
-# TODO: fix error without body (global validation?)
-# TODO: show in ui and send in email code
 POST {{baseUrl}}/auth/magic HTTP/1.1
 Content-Type: application/json
 

@@ -1,25 +1,10 @@
 ## Fixes
 
-- add link to auth to guest shortener
-- return theme changer
 - adjust fonts and padding in shortener for mobile
 - fix and/or hide metrics
+- actually send emails
 
-## Promo
+### (Magic) Login
 
-- features block
-- user pains block
-- pricing (try)
-- roadmap (try)
-- reviews (skip)
-- faq (try)
-
-## API
-
-- Auth
-  - Take already created links from cookie and bind to user
-- Links
-  - Get
-  - Create (Guest)
-  - Create (Authed)
-- Gateway
+- fix error without body (global validation?)
+- show in ui and send in email code

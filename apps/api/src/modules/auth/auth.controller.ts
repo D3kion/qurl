@@ -34,10 +34,4 @@ export class AuthController {
   async verifyMagicLogin(@Req() req) {
     return this.auth.createJWT(req.user);
   }
-
-  @UseGuards(AuthGuard('jwt'))
-  @Get('test')
-  async test() {
-    return 'test';
-  }
 }
