@@ -7,5 +7,6 @@ import { DatacloudModule } from 'src/providers/prisma/datacloud.module';
   imports: [DatacloudModule],
   controllers: [UserController],
   providers: [UserService],
+  exports: [UserService],
 })
 export class UserModule {}

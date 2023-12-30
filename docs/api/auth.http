@@ -1,0 +1,10 @@
+@baseUrl = http://127.0.0.1:4200
+
+### (Magic) Login
+POST {{baseUrl}}/auth/magic HTTP/1.1
+Content-Type: application/json
+
+{"destination":"test@example.com"}
+
+### (Magic) Login callback
+GET {{baseUrl}}/auth/magic/callback?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXN0aW5hdGlvbiI6InRlc3RAZXhhbXBsZS5jb20iLCJjb2RlIjoiMzE5NzkiLCJpYXQiOjE3MDM4NjgwNDUsImV4cCI6MTcwMzg3MTY0NX0.98AFLyiNPSCsougvXGR568dsUI4-hEy7ErsAp682N6g HTTP/1.1
