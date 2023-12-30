@@ -1,8 +1,8 @@
 export default () => ({
-  common: {
-    appName: 'qURL',
-    baseUrl: 'qurl.su',
-  } satisfies CommonConfig,
+  app: {
+    // appName: 'qURL',
+    baseUrl: process.env.APP_BASE_URL || 'http://localhost:4200',
+  } satisfies AppConfig,
   server: {
     port: parseInt(process.env.PORT, 10) || 4200,
   } satisfies ServerConfig,
@@ -15,8 +15,8 @@ export default () => ({
   } satisfies AuthConfig,
 });
 
-export type CommonConfig = {
-  appName: string;
+export type AppConfig = {
+  // appName: string;
   baseUrl: string;
 };
 

@@ -1,10 +1,13 @@
-@baseUrl = http://127.0.0.1:4200
+@baseUrl=http://127.0.0.1:4200
+@magicToken=
 
 ### (Magic) Login
+# TODO: fix error without body (global validation?)
+# TODO: show in ui and send in email code
 POST {{baseUrl}}/auth/magic HTTP/1.1
 Content-Type: application/json
 
-{"destination":"test@example.com"}
+{"destination":"test@qurl.dev"}
 
-### (Magic) Login callback
-GET {{baseUrl}}/auth/magic/callback?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXN0aW5hdGlvbiI6InRlc3RAZXhhbXBsZS5jb20iLCJjb2RlIjoiMzE5NzkiLCJpYXQiOjE3MDM4NjgwNDUsImV4cCI6MTcwMzg3MTY0NX0.98AFLyiNPSCsougvXGR568dsUI4-hEy7ErsAp682N6g HTTP/1.1
+### (Magic) Login callback (Check token in logs for dev env)
+GET {{baseUrl}}/auth/magic?token={{magicToken}} HTTP/1.1

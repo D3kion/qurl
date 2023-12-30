@@ -8,6 +8,7 @@ import { UserModule } from '../user/user.module';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 import { MagicStrategy } from './magic.strategy';
+import { JwtStrategy } from './jwt.strategy';
 
 @Module({
   imports: [
@@ -18,12 +19,12 @@ import { MagicStrategy } from './magic.strategy';
       useFactory: async (configService: ConfigService) => ({
         global: true,
         secret: configService.get<AuthConfig>('auth').jwtSecret,
-        signOptions: { expiresIn: '60s' },
+        signOptions: { expiresIn: '1h' },
       }),
       inject: [ConfigService],
     }),
   ],
-  providers: [AuthService, MagicStrategy],
+  providers: [AuthService, MagicStrategy, JwtStrategy],
   exports: [AuthService],
   controllers: [AuthController],
 })

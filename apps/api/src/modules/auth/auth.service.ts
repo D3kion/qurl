@@ -1,41 +1,35 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { User } from 'src/domain/user.model';
 import { UserService } from '../user/user.service';
-import { AuthGuard } from '@nestjs/passport';
-import { MagicStrategy } from './magic.strategy';
 
 @Injectable()
 export class AuthService {
   constructor(
     private users: UserService,
-    // private jwt: JwtService,
+    private jwt: JwtService,
   ) {}
 
-  // async signInWithMagicLink(email: string) {
-  //   const user = await this.users.findOne({ email });
-  //   const payload = {
-  //     sub: user.id,
-  //     email: user.email,
-  //     name: user.name,
-  //     verified: user.emailVerified,
-  //     image: user.image,
-  //   };
-  //   return {
-  //     accessToken: await this.jwt.signAsync(payload),
-  //   };
-  // }
-
-  // async signInWithOauth(): Promise<User> {
-  //   // const user = await this.userSrv.findOne({ email });
-  //   // TODO: Generate a JWT and return it here
-  //   // instead of the user object
-  //   return {} as any;
-  // }
-
-  async findOrCreate(email: string) {
+  async findOrCreate(email: string): Promise<User> {
     let user = await this.users.findOne({ email });
     if (!user) user = await this.users.create({ email });
     return user;
+  }
+
+  async findOne(email: string): Promise<User | null> {
+    return this.users.findOne({ email });
+  }
+
+  async createJWT(user: User) {
+    const payload = {
+      sub: user.id,
+      email: user.email,
+      // name: user.name,
+      // verified: user.emailVerified,
+      // image: user.image,
+    };
+    return {
+      access_token: await this.jwt.signAsync(payload),
+    };
   }
 }

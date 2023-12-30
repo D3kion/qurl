@@ -1,4 +1,14 @@
-import { Body, Controller, Post, Req, Res } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Post,
+  Req,
+  Res,
+  UseGuards,
+} from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
+
 import { MagicStrategy } from './magic.strategy';
 import { AuthService } from './auth.service';
 
@@ -19,8 +29,15 @@ export class AuthController {
     return this.magic.send(req, res);
   }
 
-  @Post('oauth')
-  signInWithOauth() {
-    // return this.authService.signInWithMagicLink(payload.email);
+  @UseGuards(AuthGuard('magiclogin'))
+  @Get('magic')
+  async verifyMagicLogin(@Req() req) {
+    return this.auth.createJWT(req.user);
+  }
+
+  @UseGuards(AuthGuard('jwt'))
+  @Get('test')
+  async test() {
+    return 'test';
   }
 }
