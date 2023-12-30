@@ -66,7 +66,7 @@ export function PromoLayout({ children }: React.PropsWithChildren) {
           </div>
           <div>
             <Link
-              href="#"
+              href="/blog"
               className={cn(
                 buttonVariants({ variant: "link" }),
                 "no-underline text-muted-foreground hover:text-primary hover:no-underline"
@@ -75,14 +75,14 @@ export function PromoLayout({ children }: React.PropsWithChildren) {
               Блог
             </Link>
             <Link
-              href="#"
+              href="/help"
               className={cn(
                 buttonVariants({ variant: "link" }),
                 "no-underline text-muted-foreground hover:text-primary hover:no-underline"
               )}
               // className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
             >
-              Документация
+              Помощь
             </Link>
           </div>
         </nav>
