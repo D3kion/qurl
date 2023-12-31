@@ -21,8 +21,8 @@ export function HeroBG() {
               values="0%;3%;0%"
               repeatCount="indefinite"
             ></animate>
-            <stop offset="0%" stop-color="rgba(255, 0, 255, 1)"></stop>
-            <stop offset="100%" stop-color="rgba(255, 0, 255, 0)"></stop>
+            <stop offset="0%" stopColor="rgba(255, 0, 255, 1)"></stop>
+            <stop offset="100%" stopColor="rgba(255, 0, 255, 0)"></stop>
           </radialGradient>
           <radialGradient
             id="Gradient2"
@@ -38,8 +38,8 @@ export function HeroBG() {
               values="0%;3%;0%"
               repeatCount="indefinite"
             ></animate>
-            <stop offset="0%" stop-color="rgba(255, 255, 0, 1)"></stop>
-            <stop offset="100%" stop-color="rgba(255, 255, 0, 0)"></stop>
+            <stop offset="0%" stopColor="rgba(255, 255, 0, 1)"></stop>
+            <stop offset="100%" stopColor="rgba(255, 255, 0, 0)"></stop>
           </radialGradient>
           <radialGradient
             id="Gradient3"
@@ -55,8 +55,8 @@ export function HeroBG() {
               values="0%;3%;0%"
               repeatCount="indefinite"
             ></animate>
-            <stop offset="0%" stop-color="rgba(0, 255, 255, 1)"></stop>
-            <stop offset="100%" stop-color="rgba(0, 255, 255, 0)"></stop>
+            <stop offset="0%" stopColor="rgba(0, 255, 255, 1)"></stop>
+            <stop offset="100%" stopColor="rgba(0, 255, 255, 0)"></stop>
           </radialGradient>
           <radialGradient
             id="Gradient4"
@@ -72,8 +72,8 @@ export function HeroBG() {
               values="0%;5%;0%"
               repeatCount="indefinite"
             ></animate>
-            <stop offset="0%" stop-color="rgba(0, 255, 0, 1)"></stop>
-            <stop offset="100%" stop-color="rgba(0, 255, 0, 0)"></stop>
+            <stop offset="0%" stopColor="rgba(0, 255, 0, 1)"></stop>
+            <stop offset="100%" stopColor="rgba(0, 255, 0, 0)"></stop>
           </radialGradient>
           <radialGradient
             id="Gradient5"
@@ -89,8 +89,8 @@ export function HeroBG() {
               values="0%;5%;0%"
               repeatCount="indefinite"
             ></animate>
-            <stop offset="0%" stop-color="rgba(0,0,255, 1)"></stop>
-            <stop offset="100%" stop-color="rgba(0,0,255, 0)"></stop>
+            <stop offset="0%" stopColor="rgba(0,0,255, 1)"></stop>
+            <stop offset="100%" stopColor="rgba(0,0,255, 0)"></stop>
           </radialGradient>
           <radialGradient
             id="Gradient6"
@@ -106,8 +106,8 @@ export function HeroBG() {
               values="0%;5%;0%"
               repeatCount="indefinite"
             ></animate>
-            <stop offset="0%" stop-color="rgba(255,0,0, 1)"></stop>
-            <stop offset="100%" stop-color="rgba(255,0,0, 0)"></stop>
+            <stop offset="0%" stopColor="rgba(255,0,0, 1)"></stop>
+            <stop offset="100%" stopColor="rgba(255,0,0, 0)"></stop>
           </radialGradient>
         </defs>
         <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient5)">

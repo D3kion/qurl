@@ -1,8 +1,13 @@
-import { Card, CardHeader, CardTitle } from "@/shared/ui/card";
-import { Shortener } from "@/features/promo-shortener";
+import { User } from "@/shared/lib/domain/user";
+import { PromoGuestShortener } from "@/features/promo-shortener";
+
 import { HeroBG } from "./hero-bg";
 
-export function Hero() {
+export type HeroProps = {
+  user?: User;
+};
+
+export function Hero({ user }: HeroProps) {
   return (
     <div className="relative -mt-14 pt-32 overflow-hidden">
       <HeroBG />
@@ -23,36 +28,7 @@ export function Hero() {
             вашими данными
           </span>
         </div>
-        <div className="mx-auto space-y-2">
-          <Shortener />
-          {true && (
-            <Card className="px-6 py-4 flex flex-col gap-0.5 cursor-pointer">
-              <a
-                className="font-bold"
-                href="https://qurl.su/yaru"
-                target="_blank"
-              >
-                qurl.su/yaru
-              </a>
-              <a
-                className="text-muted-foreground hover:underline underline-offset-2"
-                href="https://yandex.ru"
-                target="_blank"
-              >
-                https://yandex.ru
-              </a>
-            </Card>
-          )}
-          {true && (
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-center">
-                  Попробуйте сократить вашу первую ссылку!
-                </CardTitle>
-              </CardHeader>
-            </Card>
-          )}
-        </div>
+        {user ? <div>wip</div> : <PromoGuestShortener className="mx-auto" />}
       </section>
       <section className=" mt-12 col-span-2 h-[180px] bg-background/25 border-y backdrop-blur">
         <ul className="h-full container mx-auto flex justify-evenly items-center">
