@@ -1,18 +1,34 @@
-import { Card } from "@/shared/ui/card";
+import { Link } from "@qurl/datacloud";
 
-export function ShortenerList() {
-  return (
+import { Card, CardHeader, CardTitle } from "@/shared/ui/card";
+
+export function ShortenerList({ data }: { data: Link[] }) {
+  if (!data.length)
+    return (
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-center">
+            ☝️ Попробуйте сократить вашу первую ссылку!
+          </CardTitle>
+        </CardHeader>
+      </Card>
+    );
+  return data.map((link) => (
     <Card className="px-6 py-4 flex flex-col gap-0.5 cursor-pointer">
-      <a className="font-bold" href="https://qurl.su/yaru" target="_blank">
-        qurl.su/yaru
+      <a
+        className="font-bold"
+        href={`${link.domain}/${link.key}`}
+        target="_blank"
+      >
+        {link.domain}/{link.key}
       </a>
       <a
         className="text-muted-foreground hover:underline underline-offset-2"
-        href="https://yandex.ru"
+        href={link.url}
         target="_blank"
       >
-        https://yandex.ru
+        {link.url}
       </a>
     </Card>
-  );
+  ));
 }

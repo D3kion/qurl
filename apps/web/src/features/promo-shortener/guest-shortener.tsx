@@ -10,11 +10,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/shared/ui/card";
-import { useGuestLinks } from "@/entity/link/link.hook";
+import { useGuestLinks } from "@/entity/link/guest-links.hook";
 
 import { ShortenerForm, ShortenerFormValues } from "./shortener-form";
 import { ShortenerList } from "./shortener-list";
-import { ShortenerEmpty } from "./shortener-empty";
 
 export type PromoGuestShortenerProps = { className?: string };
 
@@ -24,15 +23,11 @@ export function PromoGuestShortener({ className }: PromoGuestShortenerProps) {
 
   async function onSubmit(payload: ShortenerFormValues) {
     try {
-      const res = await createLink(payload);
-      console.log(res.data);
-      // TODO: mutate locally
+      await createLink(payload);
     } catch (err) {
       // TODO: notif
       console.log(err);
     }
-
-    // TODO: invalidate or ^
   }
 
   return (
@@ -52,7 +47,7 @@ export function PromoGuestShortener({ className }: PromoGuestShortenerProps) {
           <ShortenerForm onSubmit={onSubmit} />
         </CardContent>
       </Card>
-      {links.length ? <ShortenerList /> : <ShortenerEmpty />}
+      <ShortenerList data={links} />
     </div>
   );
 }
