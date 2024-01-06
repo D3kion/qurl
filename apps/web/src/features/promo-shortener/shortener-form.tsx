@@ -7,9 +7,10 @@ export type ShortenerFormValues = {
 
 export type ShortenerFormProps = {
   onSubmit: (values: ShortenerFormValues) => void;
+  disabled?: boolean;
 };
 
-export function ShortenerForm({ onSubmit }: ShortenerFormProps) {
+export function ShortenerForm({ onSubmit, disabled }: ShortenerFormProps) {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
@@ -27,8 +28,9 @@ export function ShortenerForm({ onSubmit }: ShortenerFormProps) {
         type="url"
         defaultValue="https://"
         placeholder="Ссылка для сокращения"
+        disabled={disabled}
       />
-      <Button className="w-full sm:w-fit" type="submit">
+      <Button className="w-full sm:w-fit" type="submit" disabled={disabled}>
         Сократить
       </Button>
     </form>

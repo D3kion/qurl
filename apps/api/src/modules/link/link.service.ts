@@ -18,6 +18,7 @@ export class LinkService {
   async getGuestLinks(ids: string[]): Promise<Link[]> {
     return this.db.link.findMany({
       where: { id: { in: ids } },
+      orderBy: { createdAt: 'desc' },
     });
   }
 

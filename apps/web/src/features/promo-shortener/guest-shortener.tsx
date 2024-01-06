@@ -19,7 +19,7 @@ export type PromoGuestShortenerProps = { className?: string };
 
 export function PromoGuestShortener({ className }: PromoGuestShortenerProps) {
   // TODO: add loading behaviour
-  const { links, createLink, isCreating } = useGuestLinks();
+  const { links, createLink } = useGuestLinks();
 
   async function onSubmit(payload: ShortenerFormValues) {
     try {
@@ -44,10 +44,10 @@ export function PromoGuestShortener({ className }: PromoGuestShortenerProps) {
           </CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4">
-          <ShortenerForm onSubmit={onSubmit} />
+          <ShortenerForm onSubmit={onSubmit} disabled={links.length > 4} />
         </CardContent>
       </Card>
-      <ShortenerList data={links} />
+      <ShortenerList data={links.slice(0, 4)} />
     </div>
   );
 }
