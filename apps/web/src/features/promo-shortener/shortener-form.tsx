@@ -6,6 +6,7 @@ export type ShortenerFormValues = {
 };
 
 export type ShortenerFormProps = {
+  // eslint-disable-next-line no-unused-vars
   onSubmit: (values: ShortenerFormValues) => void;
   disabled?: boolean;
 };
