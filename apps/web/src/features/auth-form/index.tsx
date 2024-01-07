@@ -78,7 +78,7 @@ export function AuthForm({ className, ...props }: AuthFormProps) {
           ) : (
             <Icons.gitHub className="mr-2 h-4 w-4" />
           )}{" "}
-          Yandex (Soon)
+          Яндекс (Soon)
         </Button>
         <Button variant="outline" type="button" disabled>
           {isLoggingIn ? (
@@ -86,7 +86,7 @@ export function AuthForm({ className, ...props }: AuthFormProps) {
           ) : (
             <Icons.gitHub className="mr-2 h-4 w-4" />
           )}{" "}
-          VK (Soon)
+          ВКонтакте (Soon)
         </Button>
       </div>
     </div>

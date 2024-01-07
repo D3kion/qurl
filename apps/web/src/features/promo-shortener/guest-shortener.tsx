@@ -44,7 +44,7 @@ export function PromoGuestShortener({ className }: PromoGuestShortenerProps) {
           </CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4">
-          <ShortenerForm onSubmit={onSubmit} disabled={links.length > 4} />
+          <ShortenerForm onSubmit={onSubmit} disabled={links.length > 3} />
         </CardContent>
       </Card>
       <ShortenerList data={links.slice(0, 4)} />

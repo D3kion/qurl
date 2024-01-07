@@ -30,30 +30,28 @@ export function Hero({ user }: HeroProps) {
         </div>
         {user ? <div>wip</div> : <PromoGuestShortener className="mx-auto" />}
       </section>
-      <section className="mt-12 col-span-2 h-[180px] bg-background/25 border-y backdrop-blur">
-        <ul className="h-full container mx-auto flex justify-evenly items-center">
-          <div className="bg-muted/80 h-3/5 w-px" />
+      <section className="mt-12 col-span-2 py-6 md:h-[180px] bg-background/25 border-y backdrop-blur">
+        <ul className="h-full container mx-auto flex flex-col md:flex-row justify-evenly items-center gap-4">
           <li className="text-center">
-            <h3 className="text-2xl leading-loose">Нам доверяют</h3>
-            <p>
+            <h3 className="text-lg md:text-2xl leading-loose">Нам доверяют</h3>
+            <p className="text-sm md:text-base">
               <span className="text-primary font-bold">100+</span> клиентов
             </p>
           </li>
-          <div className="bg-muted h-3/5 w-px" />
+          <div className="bg-muted w-3/5 md:h-3/5 h-px md:w-px" />
           <li className="text-center">
-            <h3 className="text-2xl leading-loose">Сокращено</h3>
-            <p>
+            <h3 className="text-lg md:text-2xl leading-loose">Сокращено</h3>
+            <p className="text-sm md:text-base">
               <span className="text-primary font-bold">100+</span> ссылок
             </p>
           </li>
-          <div className="bg-muted h-3/5 w-px" />
+          <div className="bg-muted w-3/5 md:h-3/5 h-px md:w-px" />
           <li className="text-center">
-            <h3 className="text-2xl leading-loose">Переходов</h3>
-            <p>
+            <h3 className="text-lg md:text-2xl leading-loose">Переходов</h3>
+            <p className="text-sm md:text-base">
               <span className="text-primary font-bold">100+</span> / месяц
             </p>
           </li>
-          <div className="bg-muted/80 h-3/5 w-px" />
         </ul>
       </section>
     </div>

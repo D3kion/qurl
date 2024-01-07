@@ -30,7 +30,7 @@ export function ShortenerList({ data }: { data: Link[] }) {
         href={link.url}
         target="_blank"
       >
-        {link.url}
+        {`${link.url.slice(0, 36)}${link.url.length > 36 ? "..." : ""}`}
       </a>
     </Card>
   ));

@@ -1,3 +1,6 @@
+import { Suspense } from "react";
+
+import { Icons } from "@/shared/lib/icons";
 import { AuthMagicConfirm } from "@/features/auth-magic-confirm";
 
 export default function AuthConfirmPage() {
@@ -11,7 +14,12 @@ export default function AuthConfirmPage() {
           Зайдите в указанную почту и подтвердите вход, чтобы продолжить
         </p>
       </div>
-      <AuthMagicConfirm />
+
+      <Suspense
+        fallback={<Icons.spinner className="self-center animate-spin" />}
+      >
+        <AuthMagicConfirm />
+      </Suspense>
     </div>
   );
 }
