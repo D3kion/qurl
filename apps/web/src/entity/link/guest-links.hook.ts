@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { AxiosResponse } from "axios";
 import useSWR from "swr";
 import useSWRMutation from "swr/mutation";
-import { Link } from "@qurl/datacloud";
 
 import http from "@/shared/lib/http";
+import { LinkModel } from "./link.model";
 
 const GUEST_LINKS_TOKEN = "glinks";
 
@@ -17,7 +17,7 @@ export function useGuestLinks() {
     error: loadingError,
     isLoading,
   } = useSWR(`/links?ids=${linksIds}`, (url) =>
-    http.get<any, AxiosResponse<Link[]>>(url)
+    http.get<any, AxiosResponse<LinkModel[]>>(url)
   );
 
   const {
@@ -27,7 +27,7 @@ export function useGuestLinks() {
   } = useSWRMutation(
     "/links",
     (url, { arg }: { arg: { url: string } }) =>
-      http.post<any, AxiosResponse<Link>>(url, arg),
+      http.post<any, AxiosResponse<LinkModel>>(url, arg),
     {
       onSuccess: ({ data: link }) =>
         setLinksIds((state) => [...state, link.id]),
@@ -35,7 +35,10 @@ export function useGuestLinks() {
   );
 
   useEffect(() => {
-    const saved = localStorage.getItem(GUEST_LINKS_TOKEN)?.split(",");
+    const saved = localStorage
+      .getItem(GUEST_LINKS_TOKEN)
+      ?.split(",")
+      .filter(Boolean);
     if (saved?.length) setLinksIds(saved);
   }, []);
 

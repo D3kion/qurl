@@ -37,7 +37,7 @@ export function PromoLayout({ children }: React.PropsWithChildren) {
               Главная
             </Link>
             <Link
-              href="/"
+              href="/#features"
               className={cn(
                 buttonVariants({ variant: "link" }),
                 "no-underline text-muted-foreground hover:text-primary hover:no-underline"
@@ -45,7 +45,7 @@ export function PromoLayout({ children }: React.PropsWithChildren) {
             >
               Возможности
             </Link>
-            <Link
+            {/* <Link
               href="/"
               className={cn(
                 buttonVariants({ variant: "link" }),
@@ -62,9 +62,9 @@ export function PromoLayout({ children }: React.PropsWithChildren) {
               )}
             >
               Обратная связь
-            </Link>
+            </Link> */}
           </div>
-          <div>
+          {/* <div>
             <Link
               href="/blog"
               className={cn(
@@ -84,7 +84,7 @@ export function PromoLayout({ children }: React.PropsWithChildren) {
             >
               Помощь
             </Link>
-          </div>
+          </div> */}
         </nav>
         <div className="ml-auto flex items-center space-x-4">
           <ThemeToggle />
@@ -98,6 +98,7 @@ export function PromoLayout({ children }: React.PropsWithChildren) {
         </div>
       </div>
       <div className="flex-1 space-y-4 pb-24">{children}</div>
+      <div className="text-center pb-12"> footer + copy &copy; 2024</div>
     </div>
   );
 }

@@ -9,7 +9,7 @@ export type HeroProps = {
 
 export function Hero({ user }: HeroProps) {
   return (
-    <div className="relative -mt-14 pt-32 overflow-hidden">
+    <div className="relative -mt-14 pt-32 flex flex-col justify-between overflow-hidden min-h-screen">
       <HeroBG />
       <section className="container mx-auto flex flex-col gap-16 lg:grid lg:grid-cols-2 lg:grid-rows-1 min-h-[400px]">
         <div className="lg:pt-16 flex flex-col items-center text-center lg:items-start lg:text-start">
@@ -30,22 +30,28 @@ export function Hero({ user }: HeroProps) {
         </div>
         {user ? <div>wip</div> : <PromoGuestShortener className="mx-auto" />}
       </section>
-      <section className=" mt-12 col-span-2 h-[180px] bg-background/25 border-y backdrop-blur">
+      <section className="mt-12 col-span-2 h-[180px] bg-background/25 border-y backdrop-blur">
         <ul className="h-full container mx-auto flex justify-evenly items-center">
           <div className="bg-muted/80 h-3/5 w-px" />
-          <li>
-            <h3>Active users</h3>
-            <span>100+</span>
+          <li className="text-center">
+            <h3 className="text-2xl leading-loose">Нам доверяют</h3>
+            <p>
+              <span className="text-primary font-bold">100+</span> клиентов
+            </p>
           </li>
           <div className="bg-muted h-3/5 w-px" />
-          <li>
-            <h3>Shortened links</h3>
-            <span>100k+</span>
+          <li className="text-center">
+            <h3 className="text-2xl leading-loose">Сокращено</h3>
+            <p>
+              <span className="text-primary font-bold">100+</span> ссылок
+            </p>
           </li>
           <div className="bg-muted h-3/5 w-px" />
-          <li>
-            <h3>Montly traffic</h3>
-            <span>10m+</span>
+          <li className="text-center">
+            <h3 className="text-2xl leading-loose">Переходов</h3>
+            <p>
+              <span className="text-primary font-bold">100+</span> / месяц
+            </p>
           </li>
           <div className="bg-muted/80 h-3/5 w-px" />
         </ul>

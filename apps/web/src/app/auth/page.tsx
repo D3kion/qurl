@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { AuthForm } from "@/features/auth-form";
 
-export default function RegisterPage() {
+export default function AuthPage() {
   return (
     <div className="mx-auto flex w-full flex-col justify-center space-y-6 max-w-[350px]">
       <div className="flex flex-col space-y-2 text-center">
-        <h1 className="text-2xl font-semibold tracking-tight">Вход</h1>
+        <h2 className="text-2xl font-semibold tracking-tight">Вход</h2>
         <p className="text-sm text-muted-foreground">
           Введите ваш email, чтобы продолжить
         </p>

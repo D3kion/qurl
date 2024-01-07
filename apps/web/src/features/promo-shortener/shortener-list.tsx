@@ -14,7 +14,10 @@ export function ShortenerList({ data }: { data: Link[] }) {
       </Card>
     );
   return data.map((link) => (
-    <Card className="px-6 py-4 flex flex-col gap-0.5 cursor-pointer">
+    <Card
+      key={link.id}
+      className="px-6 py-4 flex flex-col gap-0.5 cursor-pointer"
+    >
       <a
         className="font-bold"
         href={`${link.domain}/${link.key}`}

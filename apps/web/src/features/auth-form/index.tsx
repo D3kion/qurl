@@ -1,25 +1,37 @@
 "use client";
 
-import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import { cn } from "@/shared/lib/utils";
 import { Icons } from "@/shared/lib/icons";
 import { Button } from "@/shared/ui/button";
 import { Input } from "@/shared/ui/input";
 import { Label } from "@/shared/ui/label";
+import { useAuth } from "@/entity/user/auth.hook";
 
 interface AuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export function AuthForm({ className, ...props }: AuthFormProps) {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const router = useRouter();
+  const { login, isLoggingIn, loginError } = useAuth();
 
-  async function onSubmit(event: React.SyntheticEvent) {
+  async function onSubmit(event: React.SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
-    setIsLoading(true);
+    const email = new FormData(event.currentTarget).get("email") as
+      | string
+      | null;
+    if (!email) {
+      // TODO
+      return;
+    }
 
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
+    const res = await login({ destination: email as string });
+
+    const redirParams = new URLSearchParams({
+      mail: email.split("@")[1],
+      code: res.data.code.toString(),
+    });
+    router.push("/auth/confirm?" + redirParams.toString());
   }
 
   return (
@@ -32,16 +44,17 @@ export function AuthForm({ className, ...props }: AuthFormProps) {
             </Label>
             <Input
               id="email"
+              name="email"
               placeholder="name@example.com"
               type="email"
               autoCapitalize="none"
               autoComplete="email"
               autoCorrect="off"
-              disabled={isLoading}
+              disabled={isLoggingIn}
             />
           </div>
-          <Button disabled={isLoading}>
-            {isLoading && (
+          <Button type="submit" disabled={isLoggingIn}>
+            {isLoggingIn && (
               <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
             )}
             Войти с помощью Email
@@ -58,14 +71,24 @@ export function AuthForm({ className, ...props }: AuthFormProps) {
           </span>
         </div>
       </div>
-      <Button variant="outline" type="button" disabled={isLoading}>
-        {isLoading ? (
-          <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-        ) : (
-          <Icons.gitHub className="mr-2 h-4 w-4" />
-        )}{" "}
-        Github
-      </Button>
+      <div className="flex flex-col gap-3">
+        <Button variant="outline" type="button" disabled>
+          {isLoggingIn ? (
+            <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+          ) : (
+            <Icons.gitHub className="mr-2 h-4 w-4" />
+          )}{" "}
+          Yandex (Soon)
+        </Button>
+        <Button variant="outline" type="button" disabled>
+          {isLoggingIn ? (
+            <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+          ) : (
+            <Icons.gitHub className="mr-2 h-4 w-4" />
+          )}{" "}
+          VK (Soon)
+        </Button>
+      </div>
     </div>
   );
 }
