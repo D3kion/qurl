@@ -31,7 +31,7 @@ export function PromoGuestShortener({ className }: PromoGuestShortenerProps) {
   }
 
   return (
-    <div className={cn("space-y-2", className)}>
+    <div className={cn("w-full space-y-2 overflow-hidden", className)}>
       <Card>
         <CardHeader>
           <CardTitle>Попробуйте прямо сейчас</CardTitle>

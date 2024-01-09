@@ -33,23 +33,29 @@ export function Hero({ user }: HeroProps) {
       <section className="mt-12 col-span-2 py-6 md:h-[180px] bg-background/25 border-y backdrop-blur">
         <ul className="h-full container mx-auto flex flex-col md:flex-row justify-evenly items-center gap-4">
           <li className="text-center">
-            <h3 className="text-lg md:text-2xl leading-loose">Нам доверяют</h3>
+            <h3 className="text-lg md:text-2xl font-medium leading-loose">
+              Нам доверяют
+            </h3>
             <p className="text-sm md:text-base">
-              <span className="text-primary font-bold">100+</span> клиентов
+              <span className="text-primary font-bold">10+</span> клиентов
             </p>
           </li>
           <div className="bg-muted w-3/5 md:h-3/5 h-px md:w-px" />
           <li className="text-center">
-            <h3 className="text-lg md:text-2xl leading-loose">Сокращено</h3>
+            <h3 className="text-lg md:text-2xl font-medium leading-loose">
+              Сокращено
+            </h3>
             <p className="text-sm md:text-base">
               <span className="text-primary font-bold">100+</span> ссылок
             </p>
           </li>
           <div className="bg-muted w-3/5 md:h-3/5 h-px md:w-px" />
           <li className="text-center">
-            <h3 className="text-lg md:text-2xl leading-loose">Переходов</h3>
+            <h3 className="text-lg md:text-2xl font-medium leading-loose">
+              Переходов
+            </h3>
             <p className="text-sm md:text-base">
-              <span className="text-primary font-bold">100+</span> / месяц
+              <span className="text-primary font-bold">1 000+</span> / месяц
             </p>
           </li>
         </ul>

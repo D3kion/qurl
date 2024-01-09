@@ -9,6 +9,8 @@ import {
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 
+import { User } from 'src/domain/user.model';
+import { UserService } from '../user/user.service';
 import { MagicStrategy } from './magic.strategy';
 import { AuthService } from './auth.service';
 
@@ -17,7 +19,14 @@ export class AuthController {
   constructor(
     private auth: AuthService,
     private magic: MagicStrategy,
+    private users: UserService,
   ) {}
+
+  @UseGuards(AuthGuard('jwt'))
+  @Get('me')
+  me(@Req() req): Promise<User> {
+    return this.users.findOne({ id: req.user.id });
+  }
 
   @Post('magic')
   async signInWithMagicLink(

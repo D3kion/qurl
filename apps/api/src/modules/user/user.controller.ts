@@ -1,26 +1,12 @@
-import {
-  Controller,
-  Get,
-  Body,
-  Patch,
-  Delete,
-  UseGuards,
-  Req,
-} from '@nestjs/common';
+import { Controller, Body, Patch, Delete, UseGuards } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 
 import { User } from 'src/domain/user.model';
-import { UserService } from './user.service';
-import { AuthGuard } from '@nestjs/passport';
 
 @UseGuards(AuthGuard('jwt'))
 @Controller('user')
 export class UserController {
-  constructor(private readonly userService: UserService) {}
-
-  @Get()
-  me(@Req() req): Promise<User> {
-    return this.userService.findOne({ id: req.user.id });
-  }
+  constructor() {}
 
   @Patch()
   update(@Body() payload: Partial<User>): Promise<User> {

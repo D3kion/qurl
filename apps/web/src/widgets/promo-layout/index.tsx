@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 import { cn } from "@/shared/lib/utils";
-import { Button, buttonVariants } from "@/shared/ui/button";
+import { buttonVariants } from "@/shared/ui/button";
 import { ThemeToggle } from "@/features/theme-toggle";
-import { UserNavigation } from "@/features/user-navigation";
+import { PromoNavigation } from "@/features/promo-navigation";
 
 export function PromoLayout({ children }: React.PropsWithChildren) {
   return (
@@ -88,17 +88,46 @@ export function PromoLayout({ children }: React.PropsWithChildren) {
         </nav>
         <div className="ml-auto flex items-center space-x-4">
           <ThemeToggle />
-          {true ? (
-            <Button asChild>
-              <Link href="/auth">Ранний доступ</Link>
-            </Button>
-          ) : (
-            <UserNavigation />
-          )}
+          <PromoNavigation />
         </div>
       </div>
       <div className="flex-1 space-y-4 pb-24">{children}</div>
-      <div className="text-center pb-12"> footer + copy &copy; 2024</div>
+      <div className="pt-12 pb-8 bg-border/10 border-t border-border">
+        <div className="container flex flex-col gap-4 items-center">
+          <div className="flex-col text-center">
+            {/* <div>
+              <Link
+                className={buttonVariants({
+                  className: "!text-foreground",
+                  variant: "link",
+                })}
+                href="/"
+              >
+                Главная
+              </Link>
+            </div> */}
+            <Link
+              className={buttonVariants({
+                className: "!text-foreground",
+                variant: "link",
+              })}
+              href="#"
+            >
+              Правила пользования
+            </Link>
+            <Link
+              className={buttonVariants({
+                className: "!text-foreground",
+                variant: "link",
+              })}
+              href="#"
+            >
+              Политика конфиденциальности
+            </Link>
+          </div>
+          <p>© 2024 qURL.su</p>
+        </div>
+      </div>
     </div>
   );
 }

@@ -19,7 +19,7 @@ export class MagicStrategy extends PassportStrategy(Strategy) {
     super({
       secret,
       jwtOptions: { expiresIn: '5m' },
-      callbackUrl: `${baseUrl}/auth/magic`,
+      callbackUrl: `${baseUrl}/auth/confirm`,
       sendMagicLink: async (destination, href) => {
         this.logger.debug(
           `magic login email for ${destination} with payload: ${href}`,

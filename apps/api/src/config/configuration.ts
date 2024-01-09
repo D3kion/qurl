@@ -1,7 +1,7 @@
 export default () => ({
   app: {
     // appName: 'qURL',
-    baseUrl: process.env.APP_BASE_URL || 'http://localhost:4200',
+    baseUrl: process.env.APP_BASE_URL || 'http://localhost:4100',
   } satisfies AppConfig,
   server: {
     port: parseInt(process.env.PORT, 10) || 4200,

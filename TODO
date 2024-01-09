@@ -1,7 +1,34 @@
+# Pre-alpha (max 100 users)
+
+- Common
+  - Logo
+  - Basic SEO
+  - Self-analytics + pixel
+  - Deploy infra
+  - Monitoring and alerting
+  - Policies
+- Promo
+  - Alive metrics
+  - Authed shorting flow
+  - [>] Features images
+  - [>] About us + some client portraits
+  - [>] Pricing
+  - Footer
+- Auth
+  - [x] Magic confirm
+  - [x] Persistance
+  - Refresh
+  - OAuth
+  - [~] Pre-register feedback form
+- [>] Blog
+  - Latest page
+  - Post page
+  - Edit for admin
+- Gateway
+  - Basic gate just for our domain
+
 ## Fixes
 
-- adjust fonts and padding in shortener for mobile
-- fix and/or hide metrics
 - actually send emails
 
 ### (Magic) Login

@@ -71,14 +71,14 @@ export function AuthForm({ className, ...props }: AuthFormProps) {
           </span>
         </div>
       </div>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-2">
         <Button variant="outline" type="button" disabled>
           {isLoggingIn ? (
             <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
           ) : (
             <Icons.gitHub className="mr-2 h-4 w-4" />
           )}{" "}
-          Яндекс (Soon)
+          ВКонтакте (Скоро)
         </Button>
         <Button variant="outline" type="button" disabled>
           {isLoggingIn ? (
@@ -86,7 +86,15 @@ export function AuthForm({ className, ...props }: AuthFormProps) {
           ) : (
             <Icons.gitHub className="mr-2 h-4 w-4" />
           )}{" "}
-          ВКонтакте (Soon)
+          Яндекс (Скоро)
+        </Button>
+        <Button variant="outline" type="button" disabled>
+          {isLoggingIn ? (
+            <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+          ) : (
+            <Icons.gitHub className="mr-2 h-4 w-4" />
+          )}{" "}
+          Google (Скоро)
         </Button>
       </div>
     </div>
